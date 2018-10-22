@@ -11,17 +11,24 @@ import CoreData
 
 class ResultadoController: UIViewController {
     var valor: String? = nil
+    @IBOutlet weak var tvResultados: UITextView!
     
-    @IBOutlet weak var tvResultado: UITextView!
+    var _valor: Int = 0
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        tvResultado.text = valor
+        tvResultados.isEditable = false
         calculaResultado(nota: Int(valor!)!)
     }
     
+    
+    
     func calculaResultado(nota: Int){
+        
+        _valor = Int(valor!)!
+        var sobra: Int = 0
+        var mensagem: String = ""
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:
             "Notas")
@@ -33,13 +40,29 @@ class ResultadoController: UIViewController {
         
         do{
             let results = try context.fetch(fetchRequest)
+            sobra = _valor
             
             for r in results {
                 
-                let p = (r as AnyObject).value(forKey: "valor") as! Int
+                let nota = (r as AnyObject).value(forKey: "valor") as! Int
                 
-                print(p)
+                while nota < _valor {
+                    
+                    mensagem += "Quantidade de notas de R$ \(nota): \(_valor / nota)x"
+                    mensagem += "\r\n"
+                    
+                    sobra = Int(_valor % nota)
+                    
+                    _valor = sobra
+                }
             }
+            
+            if sobra > 0 {
+                mensagem += "Não existem notas para calcular: R$ \(sobra)"
+                mensagem += "\r\n"
+                mensagem +=  "Por favor adicione mais notas"
+            }
+            tvResultados.text = mensagem
             
         }catch{
             print(error.localizedDescription)

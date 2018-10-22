@@ -153,7 +153,13 @@
                             <outlet property="delegate" destination="kAf-6D-KOL" id="a8d-Hc-o5k"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lista de notas no sistema" id="x2q-kt-bCj"/>
+                    <navigationItem key="navigationItem" title="Lista de notas no sistema" id="x2q-kt-bCj">
+                        <barButtonItem key="rightBarButtonItem" title="Limpar" id="ZE6-sR-kkZ">
+                            <connections>
+                                <action selector="btDeleteAll:" destination="kAf-6D-KOL" id="nLJ-dk-ZAL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C71-qk-1A8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,30 +190,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="2 -&gt; 100" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YOz-K2-SoZ">
-                                <rect key="frame" x="20" y="114" width="335" height="454"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Du-fQ-Co1">
+                                <rect key="frame" x="20" y="84" width="335" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YOz-K2-SoZ" firstAttribute="top" secondItem="Frv-9B-t57" secondAttribute="top" constant="50" id="FSc-ac-VoA"/>
-                            <constraint firstItem="YOz-K2-SoZ" firstAttribute="leading" secondItem="Frv-9B-t57" secondAttribute="leading" constant="20" id="Wjp-JV-wth"/>
-                            <constraint firstItem="Frv-9B-t57" firstAttribute="bottom" secondItem="YOz-K2-SoZ" secondAttribute="bottom" constant="50" id="mYa-cV-acm"/>
-                            <constraint firstItem="Frv-9B-t57" firstAttribute="trailing" secondItem="YOz-K2-SoZ" secondAttribute="trailing" constant="20" id="ztJ-ao-GNz"/>
+                            <constraint firstItem="Frv-9B-t57" firstAttribute="bottom" secondItem="5Du-fQ-Co1" secondAttribute="bottom" constant="20" id="3Gi-cM-OeN"/>
+                            <constraint firstItem="5Du-fQ-Co1" firstAttribute="top" secondItem="Frv-9B-t57" secondAttribute="top" constant="20" id="SQ2-Dr-RfH"/>
+                            <constraint firstItem="5Du-fQ-Co1" firstAttribute="leading" secondItem="Frv-9B-t57" secondAttribute="leading" constant="20" id="eXo-cC-FSN"/>
+                            <constraint firstItem="Frv-9B-t57" firstAttribute="trailing" secondItem="5Du-fQ-Co1" secondAttribute="trailing" constant="20" id="pEe-5I-tVd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Frv-9B-t57"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notas disponíveis" id="lru-w1-LNP"/>
                     <connections>
-                        <outlet property="tvResultado" destination="YOz-K2-SoZ" id="zsY-f0-Ptp"/>
+                        <outlet property="tvResultados" destination="5Du-fQ-Co1" id="aKD-6W-Wqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqF-Xj-8ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="2317"/>
+            <point key="canvasLocation" x="940" y="2316.7916041979011"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9Fs-1F-C4q">

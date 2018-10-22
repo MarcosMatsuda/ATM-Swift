@@ -14,18 +14,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var tfValorDesejado: UITextField!
   
     @IBAction func btCalcular(_ sender: Any) {
-        performSegue(withIdentifier: "segue", sender: nil)
+        
+        
+
+        if tfValorDesejado.text != "" && verificaValor(nota: Int(tfValorDesejado.text!)!) {
+                performSegue(withIdentifier: "segue", sender: nil)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ResultadoController{
             vc.valor = tfValorDesejado.text!
         }
+    }
+    
+    func verificaValor(nota: Int) -> Bool{
+        if nota <= 0 || nota > 10000 {
+            return false
+        }
+        return true
     }
     
     

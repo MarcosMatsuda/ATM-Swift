@@ -18,6 +18,28 @@ class NotasTableViewController: UITableViewController {
         carregaNotas()
     }
     
+    @IBAction func btDeleteAll(_ sender: Any) {
+        //getting context from your Core Data Manager Class
+        let managedContext = self.getContext()
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Notas")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do {
+            try managedContext.execute(deleteRequest)
+            try managedContext.save()
+            
+            //falta atualizar a tableview...
+            
+        } catch {
+            print ("There is an error in deleting records")
+        }
+    }
+    
+    func getContext() -> NSManagedObjectContext {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        }
+            return appDelegate.persistentContainer.viewContext
+    }
     func carregaNotas(){
         let fetchRequest: NSFetchRequest<Notas> = Notas.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "valor", ascending: true)
@@ -107,6 +129,7 @@ class NotasTableViewController: UITableViewController {
 
 extension NotasTableViewController: NSFetchedResultsControllerDelegate{
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        print("teste")
         tableView.reloadData()
     }
 }

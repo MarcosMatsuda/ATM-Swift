@@ -15,6 +15,10 @@ class NotaViewController: UIViewController {
     
     var nota: Notas!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lbMensagemErro.text = ""
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
