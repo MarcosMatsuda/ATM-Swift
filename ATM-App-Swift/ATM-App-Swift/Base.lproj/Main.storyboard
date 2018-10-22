@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Calcular-->
+        <!--Calcular notas disponíveis-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ATM_App_Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,50 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SG4-Do-I6X">
-                                <rect key="frame" x="20" y="81" width="335" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira o valor desejado" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SG4-Do-I6X">
+                                <rect key="frame" x="20" y="84" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyf-vY-fcE">
-                                <rect key="frame" x="20" y="131" width="335" height="30"/>
+                                <rect key="frame" x="20" y="134" width="335" height="30"/>
                                 <state key="normal" title="Calcular"/>
+                                <connections>
+                                    <action selector="btCalcular:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T9H-fn-awd"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calcular notas disponíveis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0S-4M-Ord">
-                                <rect key="frame" x="20" y="40" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iyf-vY-fcE" firstAttribute="top" secondItem="SG4-Do-I6X" secondAttribute="bottom" constant="20" id="25C-ov-92D"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y0S-4M-Ord" secondAttribute="trailing" constant="20" id="C3P-64-tPD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SG4-Do-I6X" secondAttribute="trailing" constant="20" id="IWi-E2-FJm"/>
                             <constraint firstItem="SG4-Do-I6X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ie0-r1-cgf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iyf-vY-fcE" secondAttribute="trailing" constant="20" id="KYy-8M-31y"/>
-                            <constraint firstItem="SG4-Do-I6X" firstAttribute="top" secondItem="y0S-4M-Ord" secondAttribute="bottom" constant="20" id="Odl-xF-NJr"/>
-                            <constraint firstItem="y0S-4M-Ord" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="VUg-zw-474"/>
+                            <constraint firstItem="SG4-Do-I6X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="KiP-ch-yFC"/>
                             <constraint firstItem="iyf-vY-fcE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VyW-tZ-wDl"/>
-                            <constraint firstItem="y0S-4M-Ord" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="a4v-jw-ojT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calcular" id="6wY-FR-Y8l"/>
+                    <navigationItem key="navigationItem" title="Calcular notas disponíveis" id="fEd-Oj-nrK"/>
                     <connections>
-                        <segue destination="Oje-CS-Tnq" kind="show" identifier="NotasDisponiveis" id="yiQ-rn-cni"/>
+                        <outlet property="tfValorDesejado" destination="SG4-Do-I6X" id="7W6-5Y-J8d"/>
+                        <segue destination="Oje-CS-Tnq" kind="show" identifier="segue" id="yiQ-rn-cni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="798"/>
+            <point key="canvasLocation" x="940" y="1561"/>
         </scene>
         <!--Adicionar-->
         <scene sceneID="5yA-3e-gqy">
             <objects>
-                <viewController id="r3v-7g-f7w" sceneMemberID="viewController">
+                <viewController id="r3v-7g-f7w" customClass="NotaViewController" customModule="ATM_App_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2VA-tq-LZM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +66,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="inserir valor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adA-Mc-y7R">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira o valor da nota" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adA-Mc-y7R">
                                 <rect key="frame" x="20" y="81" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -80,6 +75,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSY-4e-SKC">
                                 <rect key="frame" x="20" y="131" width="335" height="30"/>
                                 <state key="normal" title="Adicionar"/>
+                                <connections>
+                                    <action selector="addNota:" destination="r3v-7g-f7w" eventType="touchUpInside" id="fXb-yg-njj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mensagem de erro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UM-EU-qxX">
                                 <rect key="frame" x="20" y="241" width="335" height="26.5"/>
@@ -106,27 +104,48 @@
                         <viewLayoutGuide key="safeArea" id="WrE-cs-x2Q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Adicionar" id="aTa-Xl-T6p"/>
+                    <connections>
+                        <outlet property="lbMensagemErro" destination="1UM-EU-qxX" id="zYP-Du-bvB"/>
+                        <outlet property="tfNota" destination="adA-Mc-y7R" id="bSu-WR-4K5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgo-Xu-aUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="797.45127436281871"/>
+            <point key="canvasLocation" x="1879.2" y="797.45127436281871"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Lista de notas no sistema-->
         <scene sceneID="V7X-5m-Exc">
             <objects>
-                <tableViewController id="kAf-6D-KOL" sceneMemberID="viewController">
+                <tableViewController id="kAf-6D-KOL" customClass="NotasTableViewController" customModule="ATM_App_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mYn-1Z-1CX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mEd-Z3-cdv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="mEd-Z3-cdv" customClass="NotasTableViewCell" customModule="ATM_App_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mEd-Z3-cdv" id="MJT-3C-gwk">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nota" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vb-ea-W5a">
+                                            <rect key="frame" x="26" y="16" width="343" height="12"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4Vb-ea-W5a" firstAttribute="trailing" secondItem="MJT-3C-gwk" secondAttribute="trailingMargin" constant="10" id="3uZ-gN-6rY"/>
+                                        <constraint firstItem="4Vb-ea-W5a" firstAttribute="leading" secondItem="MJT-3C-gwk" secondAttribute="leadingMargin" constant="10" id="BPo-xg-ROF"/>
+                                        <constraint firstItem="4Vb-ea-W5a" firstAttribute="top" secondItem="MJT-3C-gwk" secondAttribute="topMargin" constant="5" id="f3P-Jp-mtN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="4Vb-ea-W5a" secondAttribute="bottom" constant="5" id="wqw-fy-l1H"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lbNotasDisponiveis" destination="4Vb-ea-W5a" id="FZn-rs-3U2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -134,11 +153,11 @@
                             <outlet property="delegate" destination="kAf-6D-KOL" id="a8d-Hc-o5k"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="x2q-kt-bCj"/>
+                    <navigationItem key="navigationItem" title="Lista de notas no sistema" id="x2q-kt-bCj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C71-qk-1A8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="1562"/>
+            <point key="canvasLocation" x="1829.5999999999999" y="1561.169415292354"/>
         </scene>
         <!--Lista-->
         <scene sceneID="L42-gn-KwB">
@@ -155,47 +174,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kv-E0-M1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="797"/>
+            <point key="canvasLocation" x="2768.8000000000002" y="796.55172413793105"/>
         </scene>
-        <!--View Controller-->
+        <!--Notas disponíveis-->
         <scene sceneID="FYr-k8-nVe">
             <objects>
-                <viewController id="Oje-CS-Tnq" sceneMemberID="viewController">
+                <viewController id="Oje-CS-Tnq" customClass="ResultadoController" customModule="ATM_App_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vos-wQ-qyN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notas disponíveis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2F-tM-oPc">
-                                <rect key="frame" x="20" y="40" width="335" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="2 -&gt; 100" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YOz-K2-SoZ">
-                                <rect key="frame" x="20" y="80.5" width="335" height="150"/>
+                                <rect key="frame" x="20" y="114" width="335" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="MLZ-iJ-1Xf"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Frv-9B-t57" firstAttribute="trailing" secondItem="i2F-tM-oPc" secondAttribute="trailing" constant="20" id="3z6-tl-Fpp"/>
-                            <constraint firstItem="YOz-K2-SoZ" firstAttribute="top" secondItem="i2F-tM-oPc" secondAttribute="bottom" constant="20" id="4fc-YA-n13"/>
-                            <constraint firstItem="i2F-tM-oPc" firstAttribute="top" secondItem="Frv-9B-t57" secondAttribute="top" constant="20" id="JTk-AP-bMb"/>
-                            <constraint firstItem="YOz-K2-SoZ" firstAttribute="leading" secondItem="Frv-9B-t57" secondAttribute="leading" constant="20" id="M8D-zv-WOq"/>
-                            <constraint firstItem="i2F-tM-oPc" firstAttribute="leading" secondItem="Frv-9B-t57" secondAttribute="leading" constant="20" id="TnV-R8-eT5"/>
-                            <constraint firstItem="Frv-9B-t57" firstAttribute="trailing" secondItem="YOz-K2-SoZ" secondAttribute="trailing" constant="20" id="XDO-tn-vgd"/>
+                            <constraint firstItem="YOz-K2-SoZ" firstAttribute="top" secondItem="Frv-9B-t57" secondAttribute="top" constant="50" id="FSc-ac-VoA"/>
+                            <constraint firstItem="YOz-K2-SoZ" firstAttribute="leading" secondItem="Frv-9B-t57" secondAttribute="leading" constant="20" id="Wjp-JV-wth"/>
+                            <constraint firstItem="Frv-9B-t57" firstAttribute="bottom" secondItem="YOz-K2-SoZ" secondAttribute="bottom" constant="50" id="mYa-cV-acm"/>
+                            <constraint firstItem="Frv-9B-t57" firstAttribute="trailing" secondItem="YOz-K2-SoZ" secondAttribute="trailing" constant="20" id="ztJ-ao-GNz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Frv-9B-t57"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Notas disponíveis" id="lru-w1-LNP"/>
+                    <connections>
+                        <outlet property="tvResultado" destination="YOz-K2-SoZ" id="zsY-f0-Ptp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqF-Xj-8ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="1551"/>
+            <point key="canvasLocation" x="940" y="2317"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9Fs-1F-C4q">
@@ -203,11 +215,12 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sbD-0W-SgM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EIf-r8-ogn">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="S7X-vT-jsB"/>
+                        <segue destination="7Ct-el-N1y" kind="relationship" relationship="viewControllers" id="S7X-vT-jsB"/>
                         <segue destination="r3v-7g-f7w" kind="relationship" relationship="viewControllers" id="dsH-Eh-oa5"/>
                         <segue destination="tRK-3F-12C" kind="relationship" relationship="viewControllers" id="KVS-IQ-QM3"/>
                     </connections>
@@ -215,6 +228,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcQ-bG-cVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940" y="-72"/>
+        </scene>
+        <!--Calcular-->
+        <scene sceneID="QjD-QS-JMN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Ct-el-N1y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calcular" id="6wY-FR-Y8l"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rvE-s4-3z4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="udX-lD-toD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCJ-L0-spb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="797"/>
         </scene>
     </scenes>
 </document>
