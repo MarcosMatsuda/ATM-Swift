@@ -21,8 +21,6 @@ class NotaViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        nota = Notas(context: context)
     }
     
     
